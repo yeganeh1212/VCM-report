@@ -1,0 +1,150 @@
+#Whatever following "#" will be ignored by the programme.
+#You may use a "word", number, or character to label class instances. Note that this lable will only be used by the programme within the configuration file enviroment to distiguish between classes.  If no label is provided, the programme will automatically assign a number label beginning from 0.
+
+-GeneralParameters
+
+ProjectName 2ta
+
+SimulationTimeInPs 500
+
+StepSizeInFs 10
+
+ReportIntervalInFs 10
+
+#SimulationBoxLength 0
+Integrator L
+FrictionInPs 0.01
+Temperature 310
+#MCBarostatPressure 0
+#MCBarostatTemperature 0
+#MCBarostatFrequency 0
+#MCAnisoBarostatPressure 0 0 0
+#MCAnisoBarostatTemperature 0
+#MCAnisoBarostatScaleXYZ false false false
+#MCAnisoBarostatFrequency 0
+#CMMotionRemoverStep 0
+#ReportEnergy true
+#WantVelocity false
+#PeriodicBoxVector0 1000 0 0
+#PeriodicBoxVector1 0 1000 0
+#PeriodicBoxVector2 0 0 1000
+#MCStep 0
+#MemFluidity 0
+
+-Membrane 0
+
+MeshFile Mesh/icospheres/16_2562n.ply
+
+SpringCoeff 2064
+
+BendingModel cosine
+
+#NodeMass 1
+NodeRadius 1.5
+#CoordinateTranslateVector 0 0 0
+#VelocityShiftVector 0 0 0
+SpringModel H
+#DampingCoeff 0
+BendingCoeff 62.3
+NominalLengthInNm Au
+SpontaneousTriangleBendingAngleInDegrees Au
+Scale 20
+#XYZscale 1 1 1
+#InitRandomRotation true
+#WantGeometricProps false
+#XYZinMembrane 0 0 0
+#LJsigma 1
+LJepsilon 5
+#ExtForceModel 0
+#ExtForceRigidity 0 0 0
+#UpdateRadius -1
+#UpdateBeginTimeInPs 0
+#UpdateEndTimeInPs 0
+
+-Membrane 1
+
+MeshFile Mesh/icospheres/2_42n.ply
+
+SpringCoeff 1000
+
+BendingModel cosine
+
+#NodeMass 1
+NodeRadius 0.5
+CoordinateTranslateVector 16.9 6.1 0
+VelocityShiftVector 0 0 0
+SpringModel H
+#DampingCoeff 0
+BendingCoeff 57
+NominalLengthInNm Au
+SpontaneousTriangleBendingAngleInDegrees Au
+Scale 1
+#XYZscale 1 1 1
+#InitRandomRotation true
+#WantGeometricProps false
+#XYZinMembrane 0 0 0
+#LJsigma 1
+LJepsilon 5
+#ExtForceModel 0
+#ExtForceRigidity 0 0 0
+#UpdateRadius -1
+#UpdateBeginTimeInPs 0
+#UpdateEndTimeInPs 0
+
+-Membrane 2
+
+MeshFile Mesh/icospheres/2_42n.ply
+
+SpringCoeff 1000
+
+BendingModel cosine
+
+#NodeMass 1
+NodeRadius 0.5
+CoordinateTranslateVector 18 0 0
+VelocityShiftVector 0 0 0
+SpringModel H
+#DampingCoeff 0
+BendingCoeff 57
+NominalLengthInNm Au
+SpontaneousTriangleBendingAngleInDegrees Au
+Scale 1
+#XYZscale 1 1 1
+#InitRandomRotation true
+#WantGeometricProps false
+#XYZinMembrane 0 0 0
+#LJsigma 1
+LJepsilon 5
+#ExtForceModel 0
+#ExtForceRigidity 0 0 0
+#UpdateRadius -1
+#UpdateBeginTimeInPs 0
+#UpdateEndTimeInPs 0
+
+-InteractionTable
+
+M0 0
+M1 LJ 0
+M2 LJ 0 0
+
+#Non-bonded interactions:
+#0:  No interaction.
+#LJ: Lennard Jones 12-6.
+#EV: Excluded Volume interaction (Shifted Lennard Jones 12-6).
+
+
+#Note: If you have multiple instances of one class that have almost the same configurations but differ in just a couple, you can use the inheritance feature. The inheritance feature allows you to copy configurations from one class and add/overwiwte new configrations. Inheritance can only be applied to classes of the same kind:
+#Example:
+#-Membrane A
+#config1 10
+#config2 true
+#config3 200
+#-Membrane B :: A
+#config2 false
+#The programme will copy the configurations of Membrane A to Membrane B and add/overwrite the configurations that are listed in Membrane B.
+#The programme will interpret Membrane B as follows:
+#-Membrane B
+#config1 10
+#config2 false
+#config3 200
+
